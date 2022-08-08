@@ -1,0 +1,12 @@
+{
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "HashiCorp.terraform",
+    "Infracost.infracost",
+    "ms-azuretools.vscode-azureterraform",
+    "ms-vscode.makefile-tools",
+    "tfsec.tfsec",
+    "tsandall.opa"
+  ]
+}
