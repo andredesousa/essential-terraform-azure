@@ -9,13 +9,14 @@ format:
 check: lint test
 
 lint:
-	tflint
+	tflint .
+	tflint modules/**
 	conftest fmt tests --check
 	terraform fmt -check
 	terraform validate
 
 test:
-	conftest test -p tests *.tf --combine
+	conftest test -p tests modules *.tf --combine --all-namespaces
 
 scan:
 	tfsec . --minimum-severity HIGH

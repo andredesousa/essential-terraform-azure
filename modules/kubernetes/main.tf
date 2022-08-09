@@ -1,10 +1,5 @@
 resource "random_pet" "prefix" {}
 
-# Configure the Microsoft Azure Provider
-provider "azurerm" {
-  features {}
-}
-
 # Create a resource group
 resource "azurerm_resource_group" "default" {
   name     = "${random_pet.prefix.id}-rg"

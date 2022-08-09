@@ -1,13 +1,6 @@
-package main
+package kubernetes
 
-terraform = [file | file := input[_]; file.path == "aks-cluster.tf"][0].contents
-
-# Azure Provider
-
-deny[msg] {
-	not terraform.provider.azurerm
-	msg = "Azure provider should be defined"
-}
+terraform = [file | file := input[_]; file.path == "modules/kubernetes/main.tf"][0].contents
 
 # Azure Resource Group
 

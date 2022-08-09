@@ -24,20 +24,21 @@ Based on best practices from the community, [Terraform Module Structure](https:/
 ```bash
 .
 ├── modules
-│   └── moduleA/
-│       ├── variables.tf
+│   └── kubernetes
 │       ├── main.tf
-│       └── outputs.tf
+│       ├── outputs.tf
+│       └── variables.tf
 ├── tests
-│   └── aks.rego
+│   └── kubernetes
+│       └── main.rego
 ├── .editorconfig
 ├── .gitignore
 ├── .terraform.lock.hcl
 ├── .tflint.hcl
-├── terraform.tfstate
-├── Makefile
 ├── main.tf
-└── README.md
+├── Makefile
+├── README.md
+└── versions.tf
 ```
 
 Modules in Terraform are parametrized code containers enclosing multiple resource declarations.
