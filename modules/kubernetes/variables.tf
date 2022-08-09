@@ -1,7 +1,7 @@
-# variable "appId" {
-#   description = "Azure Kubernetes Service Cluster service principal"
+# variable "aksName" {
+#   description = "Azure Kubernetes Service name"
 # }
 
-# variable "password" {
-#   description = "Azure Kubernetes Service Cluster password"
+# variable "acrName" {
+#   description = "Azure Container Registry name"
 # }

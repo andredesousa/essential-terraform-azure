@@ -1,0 +1,36 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+   branches: [ main ]
+  pull_request:
+   branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  Build:
+    runs-on: [ ubuntu-latest ]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2.0.0
+      with:
+        terraform_version: 1.2.5
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Lint
+      run: terraform fmt -check
+
+    - name: Terraform Validate
+      run: terraform validate
+
+    - name: Terraform Plan
+      run: terraform plan
+
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
