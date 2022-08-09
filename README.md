@@ -1,6 +1,6 @@
 # Terraform Azure Template
 
-This project provides a baseline based on the [Provision an AKS Cluster learn guide](https://learn.hashicorp.com/terraform/kubernetes/provision-aks-cluster), containing Terraform configuration files to provision an AKS cluster on Azure.
+This project provides a baseline based on the [Provision an AKS Cluster](https://learn.hashicorp.com/terraform/kubernetes/provision-aks-cluster) learn guide, containing Terraform configuration files to provision an AKS cluster on Azure.
 [Terraform](https://www.terraform.io/) enables the definition, preview, and deployment of cloud infrastructure.
 
 ## Table of Contents
