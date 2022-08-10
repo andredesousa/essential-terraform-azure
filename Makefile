@@ -3,7 +3,7 @@ install:
 	tflint --init
 
 format:
-	terraform fmt
+	terraform fmt -recursive
 	conftest fmt tests
 
 check: lint test
@@ -12,7 +12,7 @@ lint:
 	tflint .
 	tflint modules/**
 	conftest fmt tests --check
-	terraform fmt -check
+	terraform fmt -check -recursive
 	terraform validate
 
 test:

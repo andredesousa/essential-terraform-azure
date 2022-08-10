@@ -32,8 +32,8 @@ deny[msg] {
 }
 
 deny[msg] {
-	not terraform.resource.azurerm_container_registry["default"].name == "andresousaregistry"
-	msg = "Container registry name should be 'andresousaregistry'"
+	not terraform.resource.azurerm_container_registry["default"].name
+	msg = "Container registry name should be defined"
 }
 
 deny[msg] {

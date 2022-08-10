@@ -1,8 +1,6 @@
-resource "random_pet" "prefix" {}
-
 # Create a resource group
 resource "azurerm_resource_group" "default" {
-  name     = "${random_pet.prefix.id}-rg"
+  name     = var.resource_group_name
   location = "eastus"
 
   tags = {
@@ -12,7 +10,7 @@ resource "azurerm_resource_group" "default" {
 
 # Create a container registry within the resource group
 resource "azurerm_container_registry" "default" {
-  name                = "andresousaregistry"
+  name                = var.container_registry_name
   location            = azurerm_resource_group.default.location
   resource_group_name = azurerm_resource_group.default.name
   sku                 = "Standard"
@@ -21,10 +19,10 @@ resource "azurerm_container_registry" "default" {
 
 # Create a kubernetes cluster within the resource group
 resource "azurerm_kubernetes_cluster" "default" {
-  name                = "${random_pet.prefix.id}-aks"
+  name                = var.kubernetes_cluster_name
   location            = azurerm_resource_group.default.location
   resource_group_name = azurerm_resource_group.default.name
-  dns_prefix          = "${random_pet.prefix.id}-k8s"
+  dns_prefix          = var.kubernetes_cluster_dns_prefix
 
   default_node_pool {
     name       = "default"
